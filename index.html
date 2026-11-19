@@ -569,6 +569,28 @@
   }
 }
 
+  /* =====================================================
+   FIX: CONSISTENT LEFT AND RIGHT PAGE MARGINS
+   ===================================================== */
+
+/* Keep all main sections aligned */
+main > .container {
+    width: 88%;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Prevent sections from exceeding container width */
+main > .container > section {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Keep headings and cards inside their sections */
+main > .container > section > * {
+    max-width: 100%;
+}
   </style>
 
 </head>
