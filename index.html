@@ -1370,34 +1370,37 @@ main > .container > section > * {
 
 /* -----------------------------------------------------
    15.4 HIGHLIGHT ACTIVE NAVIGATION LINK
+
+   Detect the section currently occupying the middle
+   of the screen, instead of waiting for its top to
+   reach the navigation bar.
    ----------------------------------------------------- */
 
-// Get all page sections except the introduction
-const sections = [...document.querySelectorAll("main section[id]")]
-  .filter(section => section.id !== "intro");
-
-// Get all navigation links
+const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav-links a");
 
-// Detect the active section
 function updateActiveLink() {
 
-  const headerHeight = document.querySelector("header").offsetHeight;
-  const activationPoint = headerHeight + 20;
+  // Use the middle of the visible screen as the detection point
+  const activationPoint = window.innerHeight * 0.5;
 
   let currentSection = "";
 
   sections.forEach(section => {
 
-    const sectionTop = section.getBoundingClientRect().top;
+    const rect = section.getBoundingClientRect();
 
-    if (sectionTop <= activationPoint) {
+    // Check whether the detection point is inside this section
+    if (
+      rect.top <= activationPoint &&
+      rect.bottom > activationPoint
+    ) {
       currentSection = section.id;
     }
 
   });
 
-  // Add active class to the matching navigation link
+  // Update the navigation underline
   navItems.forEach(link => {
 
     const isActive =
@@ -1409,13 +1412,15 @@ function updateActiveLink() {
 
 }
 
-// Update navigation while scrolling
-window.addEventListener("scroll", updateActiveLink, { passive: true });
+// Update while scrolling
+window.addEventListener("scroll", updateActiveLink, {
+  passive: true
+});
 
 // Update after resizing
 window.addEventListener("resize", updateActiveLink);
 
-// Set initial active state
+// Set the correct active link on page load
 updateActiveLink();
 
 
