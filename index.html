@@ -294,6 +294,58 @@
         font-size: 18px;
       }
     }
+    
+/* Navigation improvements */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 5px 0;
+}
+
+.nav-links {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 15px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px 5px;
+    font-size: 14px;
+  }
+}
+
   </style>
 </head>
 
@@ -438,6 +490,104 @@
         </p>
       </div>
     </section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">05 / Education</p>
+  <h2>Academic background.</h2>
+
+  <div class="experience-card">
+    <p class="experience-meta">Bachelor of Science</p>
+    <h3>Electrical & Electronic Engineering</h3>
+    <p>Islamic University, Bangladesh</p>
+    <p>Currently pursuing undergraduate studies.</p>
+  </div>
+
+  <div class="experience-card">
+    <p class="experience-meta">Higher Secondary Certificate</p>
+    <h3>Fulchhari Government College</h3>
+    <p>Science · GPA 4.92 / 5.00</p>
+  </div>
+
+  <div class="experience-card">
+    <p class="experience-meta">Secondary School Certificate</p>
+    <h3>Badiakhali High School</h3>
+    <p>Science · GPA 5.00 / 5.00</p>
+  </div>
+
+  <div class="experience-card">
+    <p class="experience-meta">Junior School Certificate</p>
+    <h3>Badiakhali High School</h3>
+    <p>GPA 5.00 / 5.00</p>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <p class="section-label">06 / Research</p>
+  <h2>Research interests.</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>Machine Learning</h3></div>
+    <div class="skill-card"><h3>Deep Learning</h3></div>
+    <div class="skill-card"><h3>Natural Language Processing</h3></div>
+    <div class="skill-card"><h3>Image Processing</h3></div>
+    <div class="skill-card"><h3>Internet of Things</h3></div>
+  </div>
+  <p class="about-text" style="margin-top:20px">
+    These are research interests, not claims of published research.
+  </p>
+</section>
+
+<!-- ACTIVITIES -->
+<section id="activities">
+  <p class="section-label">07 / Activities & Membership</p>
+  <h2>Beyond academics.</h2>
+  <div class="experience-card">
+    <ul>
+      <li>Islamic University Science Club (IUSC)</li>
+      <li>Islamic University Research Society (IURS)</li>
+      <li>Green Voice Islamic University</li>
+      <li>Gaibandha District Students Welfare Association</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <p class="section-label">08 / Achievements</p>
+  <h2>Recognition.</h2>
+  <div class="experience-card">
+    <p class="experience-meta">25 November 2025</p>
+    <h3>IUSC Online Quiz Competition</h3>
+    <p>Awarded by the organizers of the Islamic University Science Club.</p>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section id="certificates">
+  <p class="section-label">09 / Certificates</p>
+  <h2>Courses & certifications.</h2>
+  <div class="experience-card">
+    <h3>100+ Python Coding Practice Test</h3>
+    <p>Udemy · 25 May 2026</p>
+  </div>
+  <div class="experience-card">
+    <h3>Python from Zero-to-Hero (Beginner Level)</h3>
+    <p>Udemy · 3 December 2025</p>
+  </div>
+  <div class="experience-card">
+    <h3>Python from Zero-to-Hero (Intermediate Level)</h3>
+    <p>Udemy · 15 December 2025</p>
+  </div>
+  <div class="experience-card">
+    <h3>Statistics 101</h3>
+    <p>IBM / Cognitive Class · 2 December 2025</p>
+  </div>
+  <div class="experience-card">
+    <h3>Complete Microsoft Word Excel PowerPoint Course</h3>
+    <p>Udemy · 8 December 2025</p>
+  </div>
+</section>
 
     <section id="contact">
       <p class="section-label">05 / Contact</p>
