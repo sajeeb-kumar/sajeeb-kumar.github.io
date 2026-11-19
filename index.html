@@ -441,6 +441,133 @@
         padding: 23px;
       }
     }
+    /* =====================================================
+   HERO / INTRODUCTION SECTION
+   First section visitors see when opening the website
+   ===================================================== */
+
+.hero-section {
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+  border-top: none;
+}
+
+/* Two-column layout:
+   Left = Introduction
+   Right = Profile photo */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+/* Small introductory label */
+.hero-tag {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* Your name */
+.hero-title {
+  font: 700 clamp(42px, 6vw, 68px)/1.12
+        "Space Grotesk", sans-serif;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+}
+
+/* Highlighted name or keywords */
+.hero-title span {
+  color: var(--accent);
+}
+
+/* Professional headline */
+.hero-subtitle {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* Short introduction */
+.hero-description {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 560px;
+  margin-bottom: 25px;
+}
+
+/* Keyword list */
+.hero-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.hero-keywords span {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* Profile image container */
+.hero-image-container {
+  width: 100%;
+  max-width: 440px;
+  justify-self: end;
+}
+
+/* Your profile photo */
+.hero-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* CV download button */
+.cv-button {
+  display: inline-block;
+  background: var(--accent);
+  color: #08130c;
+  padding: 13px 23px;
+  border-radius: 6px;
+  font-weight: 700;
+  transition: 0.25s;
+}
+
+.cv-button:hover {
+  transform: translateY(-3px);
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-image-container {
+    justify-self: start;
+    max-width: 340px;
+  }
+
+  .hero-section {
+    padding: 60px 0;
+  }
+}
 
   </style>
 
@@ -533,6 +660,126 @@
     <div class="container">
 
 
+      <!-- =====================================================
+     HERO SECTION / FIRST IMPRESSION
+
+     CUSTOMIZATION GUIDE:
+     1. Change your name below.
+     2. Change your academic status.
+     3. Edit your introduction.
+     4. Replace the profile image.
+     5. Upload your CV PDF and update its path.
+     ===================================================== -->
+
+<section id="intro" class="hero-section">
+
+  <div class="hero-container">
+
+    <!-- ================================================
+         LEFT SIDE: INTRODUCTION
+         ================================================ -->
+
+    <div class="hero-content">
+
+      <!-- Academic status -->
+      <p class="hero-tag">
+        EEE Undergraduate · Islamic University, Bangladesh
+      </p>
+
+      <!-- YOUR NAME: Edit this -->
+      <h1 class="hero-title">
+        Hi, I'm <span>Sajeeb Kumar.</span>
+      </h1>
+
+      <!-- Professional headline: Edit this -->
+      <h2 class="hero-subtitle">
+        Aspiring Machine Learning Engineer
+      </h2>
+
+      <!-- Short professional introduction: Edit this -->
+      <p class="hero-description">
+        An Electrical and Electronic Engineering undergraduate
+        passionate about Machine Learning, Deep Learning, and
+        Artificial Intelligence. Exploring intelligent systems
+        and applying computational techniques to real-world problems.
+      </p>
+
+      <!-- ================================================
+           KEYWORDS
+
+           Add, remove, or change keywords as needed.
+           ================================================ -->
+
+      <div class="hero-keywords">
+
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>Deep Learning</span>
+        <span>Data Analysis</span>
+        <span>PyTorch</span>
+
+      </div>
+
+
+      <!-- ================================================
+           ACTION BUTTONS
+           ================================================ -->
+
+      <div class="buttons">
+
+        <!-- Explore Projects button -->
+        <a href="#projects" class="btn btn-primary">
+          Explore My Work →
+        </a>
+
+        <!-- CV DOWNLOAD BUTTON
+
+             Upload your PDF to:
+             assets/Sajeeb-Kumar-CV.pdf
+
+             Change the filename below if necessary.
+        -->
+
+        <a href="assets/Sajeeb-Kumar-CV.pdf"
+           class="cv-button"
+           download>
+
+          ↓ Download CV
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================================
+         RIGHT SIDE: PROFILE IMAGE
+
+         HOW TO CHANGE YOUR PHOTO:
+
+         1. Create a folder named "assets" in your repository.
+         2. Upload your photo into that folder.
+         3. Name it "profile.jpg".
+         4. The image will automatically appear here.
+
+         You can use .png or .webp too, but update the
+         filename in the src attribute.
+         ================================================ -->
+
+    <div class="hero-image-container">
+
+      <img
+        src="assets/profile.jpg"
+        alt="Portrait of Sajeeb Kumar"
+        class="hero-image"
+      >
+
+    </div>
+
+  </div>
+
+</section>
       <!-- =================================================
            SECTION 1: PROJECTS
            ================================================= -->
