@@ -1368,7 +1368,55 @@ main > .container > section > * {
     });
 
 
-sections.forEach(section => observer.observe(section));
+/* -----------------------------------------------------
+   15.4 HIGHLIGHT ACTIVE NAVIGATION LINK
+   ----------------------------------------------------- */
+
+// Get all page sections except the introduction
+const sections = [...document.querySelectorAll("main section[id]")]
+  .filter(section => section.id !== "intro");
+
+// Get all navigation links
+const navItems = document.querySelectorAll(".nav-links a");
+
+// Detect the active section
+function updateActiveLink() {
+
+  const headerHeight = document.querySelector("header").offsetHeight;
+  const activationPoint = headerHeight + 20;
+
+  let currentSection = "";
+
+  sections.forEach(section => {
+
+    const sectionTop = section.getBoundingClientRect().top;
+
+    if (sectionTop <= activationPoint) {
+      currentSection = section.id;
+    }
+
+  });
+
+  // Add active class to the matching navigation link
+  navItems.forEach(link => {
+
+    const isActive =
+      link.getAttribute("href") === "#" + currentSection;
+
+    link.classList.toggle("active", isActive);
+
+  });
+
+}
+
+// Update navigation while scrolling
+window.addEventListener("scroll", updateActiveLink, { passive: true });
+
+// Update after resizing
+window.addEventListener("resize", updateActiveLink);
+
+// Set initial active state
+updateActiveLink();
 
 
   </script>
