@@ -637,7 +637,7 @@ main > .container > section > * {
     <nav class="container">
 
       <!-- Clicking the logo returns to Projects -->
-      <a href="#intro" class="logo">
+      <a href="#" class="logo" aria-label="Back to top">
         Sajeeb Kumar
       </a>
 
@@ -1331,46 +1331,40 @@ main > .container > section > * {
     });
 
 
-    /* -----------------------------------------------------
-       15.4 HIGHLIGHT ACTIVE NAVIGATION LINK
+/* =====================================================
+   15.4 ACTIVE NAVIGATION LINK
+   Only highlights the section currently in view.
+   ===================================================== */
 
-       Detects the section currently visible on screen
-       and highlights its matching navigation link.
-       ----------------------------------------------------- */
+const sections = document.querySelectorAll("main section[id]");
+const navItems = document.querySelectorAll(".nav-links a");
 
-    const sections = document.querySelectorAll("main section[id]");
+const observer = new IntersectionObserver(entries => {
 
-    const navItems = document.querySelectorAll(".nav-links a");
+    // Select the most visible intersecting section
+    const visibleSections = entries
+        .filter(entry => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
 
-    const observer = new IntersectionObserver(entries => {
+    if (visibleSections.length > 0) {
 
-      entries.forEach(entry => {
+        const currentId = visibleSections[0].target.id;
 
-        if (entry.isIntersecting) {
+        navItems.forEach(link => {
+            link.classList.toggle(
+                "active",
+                link.getAttribute("href") === "#" + currentId
+            );
+        });
+    }
 
-          navItems.forEach(link => {
+}, {
+    rootMargin: "-15% 0px -65% 0px",
+    threshold: [0, 0.25, 0.5, 0.75, 1]
+});
 
-            const isActive =
-              link.getAttribute("href") === "#" + entry.target.id;
-
-            link.classList.toggle("active", isActive);
-
-          });
-
-        }
-
-      });
-
-    }, {
-
-      // Area used to detect the currently visible section
-      rootMargin: "-20% 0px -65% 0px"
-
-    });
-
-
-    // Observe every page section
-    sections.forEach(section => observer.observe(section));
+// Observe every section
+sections.forEach(section => observer.observe(section));
 
 
   </script>
