@@ -141,14 +141,36 @@
       flex-wrap: wrap;
     }
 
-    .nav-links a {
-      transition: color 0.2s;
-    }
+    /* Navigation link styling */
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  transition: color 0.2s;
+}
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--accent);
-    }
+/* Hover and active link color */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* Underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.25s ease;
+}
+
+/* Show underline on active link */
+.nav-links a.active::after {
+  width: 100%;
+}
 
 
     /* -----------------------------------------------------
