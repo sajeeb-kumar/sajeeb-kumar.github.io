@@ -646,6 +646,14 @@ main > .container > section > * {
     transform: translateY(-2px);
     opacity: 0.9;
 }
+    /* Always show an underline on the active navigation link */
+.nav-links a.active {
+  color: var(--accent) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--accent) !important;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
   </style>
 
 </head>
