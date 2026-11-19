@@ -8,17 +8,12 @@
        1. BASIC WEBSITE INFORMATION
        ===================================================== -->
 
-  <!-- Character encoding: supports English and other languages -->
   <meta charset="UTF-8">
-
-  <!-- Makes the website responsive on mobile, tablet and desktop -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Short description shown by search engines -->
   <meta name="description"
         content="Portfolio of Sajeeb Kumar, EEE undergraduate and aspiring Machine Learning Engineer.">
 
-  <!-- Website title shown in the browser tab -->
   <title>Sajeeb Kumar | Machine Learning Engineer</title>
 
 
@@ -26,37 +21,21 @@
        2. EXTERNAL FONTS
        ===================================================== -->
 
-  <!-- Connect to Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- DM Sans: normal website text
-       Space Grotesk: headings and titles -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
 
   <!-- =====================================================
        3. CSS: WEBSITE DESIGN AND STYLING
-
-       All visual design settings are written inside <style>.
-       You can change colors, fonts, spacing, layouts, etc.
        ===================================================== -->
 
   <style>
 
     /* -----------------------------------------------------
        3.1 GLOBAL COLOR VARIABLES
-
-       Change these values to change the website's colors.
-
-       --bg       = Main background color
-       --surface  = Card background color
-       --surface-2= Secondary background color
-       --text     = Main text color
-       --muted    = Secondary text color
-       --accent   = Highlight color
-       --border   = Border color
        ----------------------------------------------------- */
 
     :root {
@@ -72,9 +51,6 @@
 
     /* -----------------------------------------------------
        3.2 RESET DEFAULT BROWSER STYLING
-
-       Different browsers have different default margins.
-       This makes the layout more consistent.
        ----------------------------------------------------- */
 
     * {
@@ -84,17 +60,15 @@
     }
 
 
-    /* Smooth scrolling when clicking navigation links */
+    /* Smooth scrolling and sticky-header spacing */
     html {
       scroll-behavior: smooth;
-
-      /* Prevent headings from hiding behind sticky header */
       scroll-padding-top: 90px;
     }
 
 
     /* -----------------------------------------------------
-       3.3 BODY: MAIN WEBSITE STYLING
+       3.3 BODY AND GENERAL ELEMENTS
        ----------------------------------------------------- */
 
     body {
@@ -104,20 +78,11 @@
       line-height: 1.7;
     }
 
-
-    /* Remove default underline from links */
     a {
       color: inherit;
       text-decoration: none;
     }
 
-
-    /* Main content container
-
-       max-width = 1100px
-       width = 88% of screen
-       margin auto = horizontally centered
-    */
     .container {
       width: min(1100px, 88%);
       margin: auto;
@@ -125,76 +90,50 @@
 
 
     /* =====================================================
-       4. HEADER AND NAVIGATION DESIGN
+       4. HEADER AND NAVIGATION
        ===================================================== */
 
-    /* Main header stays at the top when scrolling */
     header {
       border-bottom: 1px solid var(--border);
-
       position: sticky;
       top: 0;
-
-      /* Slightly transparent background */
       background: rgba(11, 15, 14, 0.96);
-
-      /* Blur effect behind the header */
       backdrop-filter: blur(14px);
-
-      /* Keeps header above other website elements */
       z-index: 100;
     }
 
-
-    /* Navigation layout
-
-       Logo stays on the left.
-       Navigation links stay on the right.
-    */
     nav {
       min-height: 76px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       gap: 25px;
       position: relative;
     }
 
-
-    /* Website logo / name */
+    /* Website logo */
     .logo {
       font: 700 22px "Space Grotesk", sans-serif;
       letter-spacing: -1px;
       white-space: nowrap;
     }
 
-
-    /* Colored dot after the logo */
     .logo span {
       color: var(--accent);
     }
 
-
-    /* Navigation links container */
+    /* Navigation links */
     .nav-links {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-
       gap: 19px;
-
       list-style: none;
       color: var(--muted);
       font-size: 13px;
-
-      /* Allows links to wrap if space is limited */
       flex-wrap: wrap;
     }
 
-
-    /* Navigation hover effect */
     .nav-links a {
       transition: color 0.2s;
     }
@@ -206,227 +145,90 @@
 
 
     /* -----------------------------------------------------
-       MOBILE MENU BUTTON
-
-       Hidden on desktop.
-       Visible on smaller screens.
-
-       Three horizontal lines form the hamburger icon.
+       4.1 MOBILE MENU BUTTON
        ----------------------------------------------------- */
 
     .menu-toggle {
       display: none;
-
       background: none;
       border: 1px solid var(--border);
       border-radius: 6px;
-
       padding: 9px;
       cursor: pointer;
     }
 
-
-    /* Three lines inside the hamburger button */
     .menu-toggle span {
       display: block;
-
       width: 22px;
       height: 2px;
-
       background: var(--text);
-
       margin: 5px 0;
       transition: 0.2s;
     }
 
 
     /* =====================================================
-       5. HERO SECTION DESIGN
-       
-       This is the first section visitors see.
-       ===================================================== */
-
-    .hero {
-      min-height: 590px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      padding: 100px 0;
-
-      /* Remove the normal section border from the homepage */
-      border: none !important;
-    }
-
-
-    /* Small introductory text above the main heading */
-    .eyebrow {
-      color: var(--accent);
-
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-      font-weight: 700;
-      margin-bottom: 22px;
-    }
-
-
-    /* Main homepage heading */
-    h1 {
-      font: 700 clamp(42px, 7vw, 76px)/1.12 "Space Grotesk", sans-serif;
-
-      letter-spacing: -3px;
-      max-width: 850px;
-    }
-
-
-    /* Highlighted text inside the main heading */
-    h1 span {
-      color: var(--accent);
-    }
-
-
-    /* Homepage introductory paragraph */
-    .hero-description {
-      color: var(--muted);
-
-      max-width: 620px;
-
-      margin: 26px 0 34px;
-      font-size: 17px;
-    }
-
-
-    /* Button container */
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-
-    /* General button design */
-    .btn {
-      display: inline-block;
-
-      padding: 12px 23px;
-
-      border: 1px solid var(--accent);
-      border-radius: 6px;
-
-      font-weight: 600;
-
-      transition: 0.25s;
-    }
-
-
-    /* Primary button: green background */
-    .btn-primary {
-      background: var(--accent);
-      color: #08130c;
-    }
-
-
-    /* Button hover animation */
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-
-    /* Secondary button hover background */
-    .btn-secondary:hover {
-      background: var(--surface-2);
-    }
-
-
-    /* =====================================================
-       6. GENERAL SECTION STYLING
-
-       All main sections share these basic properties.
+       5. GENERAL SECTION STYLING
        ===================================================== */
 
     section {
       padding: 85px 0;
-
       border-top: 1px solid var(--border);
-
-      /* Keeps section titles visible below sticky header */
       scroll-margin-top: 90px;
     }
 
-
-    /* Small section number and label */
     .section-label {
       color: var(--accent);
-
       text-transform: uppercase;
       font-size: 12px;
       letter-spacing: 2px;
-
       font-weight: 700;
       margin-bottom: 12px;
     }
 
-
-    /* Main heading of each section */
     h2 {
       font: 600 clamp(29px, 4vw, 42px) "Space Grotesk", sans-serif;
-
       letter-spacing: -1.5px;
       margin-bottom: 25px;
     }
 
-
-    /* Paragraph styling for About section */
     .about-text {
       max-width: 760px;
       color: var(--muted);
       font-size: 16px;
     }
 
+    .empty-note {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 700px;
+    }
+
 
     /* =====================================================
-       7. CARD DESIGN
-
-       These styles are reused by:
-       - Skill cards
-       - Project cards
-       - Experience cards
-       - Education cards
-       - Certificate cards
+       6. CARD DESIGN
        ===================================================== */
 
-
-    /* Skill cards arranged in a grid */
+    /* Skill cards */
     .skills-grid {
       display: grid;
-
-      /* Three equal-width columns */
       grid-template-columns: repeat(3, 1fr);
-
       gap: 16px;
       margin-top: 35px;
     }
 
-
-    /* Shared design for different card types */
+    /* Shared card design */
     .skill-card,
     .project-card,
     .experience-card {
       background: var(--surface);
-
       border: 1px solid var(--border);
       border-radius: 10px;
-
       padding: 24px;
-
       transition: 0.25s;
     }
 
-
-    /* Hover effect for cards */
+    /* Card hover effect */
     .skill-card:hover,
     .project-card:hover,
     .experience-card:hover {
@@ -434,8 +236,6 @@
       transform: translateY(-3px);
     }
 
-
-    /* Card headings */
     .skill-card h3,
     .project-card h3,
     .experience-card h3 {
@@ -443,8 +243,6 @@
       margin-bottom: 9px;
     }
 
-
-    /* Card descriptions */
     .skill-card p,
     .project-card p,
     .experience-card p {
@@ -454,55 +252,45 @@
 
 
     /* -----------------------------------------------------
-       PROJECT CARD GRID
+       6.1 PROJECT CARDS
        ----------------------------------------------------- */
 
     .project-grid {
       display: grid;
-
-      /* Two project cards per row */
       grid-template-columns: repeat(2, 1fr);
-
       gap: 20px;
       margin-top: 30px;
     }
 
-
-    /* Project number label */
     .project-number {
       color: var(--accent);
       font-size: 13px;
       margin-bottom: 18px;
     }
 
-
-    /* Project status text */
     .project-card .status {
       display: inline-block;
-
       color: var(--accent);
       font-size: 12px;
-
       margin-top: 18px;
     }
 
 
-    /* Experience and education cards */
+    /* -----------------------------------------------------
+       6.2 EXPERIENCE AND EDUCATION CARDS
+       ----------------------------------------------------- */
+
     .experience-card {
       max-width: 760px;
       margin-top: 20px;
     }
 
-
-    /* Date or category above a card heading */
     .experience-meta {
       color: var(--accent);
       font-size: 13px;
       margin-bottom: 12px;
     }
 
-
-    /* List styling inside activity cards */
     .experience-card ul {
       padding-left: 20px;
       color: var(--muted);
@@ -511,44 +299,63 @@
 
 
     /* =====================================================
-       8. CONTACT SECTION DESIGN
+       7. CONTACT SECTION
        ===================================================== */
 
     .contact-box {
       background: var(--surface);
-
       border: 1px solid var(--border);
       padding: 35px;
-
       border-radius: 12px;
       max-width: 760px;
     }
 
-
-    /* Contact description */
     .contact-box p {
       color: var(--muted);
       margin-bottom: 22px;
     }
 
 
-    /* Text for sections without published information */
-    .empty-note {
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 700px;
+    /* -----------------------------------------------------
+       7.1 BUTTON DESIGN
+       ----------------------------------------------------- */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #08130c;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-2);
     }
 
 
     /* =====================================================
-       9. FOOTER DESIGN
+       8. FOOTER
        ===================================================== */
 
     footer {
       border-top: 1px solid var(--border);
-
       padding: 28px 0;
-
       color: var(--muted);
       font-size: 13px;
       text-align: center;
@@ -556,126 +363,83 @@
 
 
     /* =====================================================
-       10. RESPONSIVE DESIGN: TABLET AND MOBILE
-
-       This media query applies when screen width is
-       950px or smaller.
-
-       Desktop navigation is replaced with hamburger menu.
+       9. RESPONSIVE DESIGN: TABLET AND MOBILE
        ===================================================== */
 
     @media (max-width: 950px) {
 
-      /* Allow navigation container to wrap */
       nav {
         min-height: 76px;
-
         flex-wrap: wrap;
         padding: 15px 0;
       }
 
-
-      /* Show hamburger button */
+      /* Show hamburger menu */
       .menu-toggle {
         display: block;
       }
 
-
       /* Hide navigation links initially */
       .nav-links {
         display: none;
-
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
-
         width: 100%;
-
         gap: 0;
         padding: 10px 0;
       }
 
-
-      /* Show navigation when JavaScript adds the open class */
+      /* Show menu when opened */
       .nav-links.open {
         display: flex;
       }
 
-
-      /* Each mobile navigation item gets its own row */
       .nav-links li a {
         display: block;
-
         padding: 10px 5px;
         font-size: 14px;
       }
-
     }
 
 
     /* =====================================================
-       11. RESPONSIVE DESIGN: SMALLER SCREENS
-
-       Applies when screen width is 700px or smaller.
+       10. RESPONSIVE DESIGN: SMALLER SCREENS
        ===================================================== */
 
     @media (max-width: 700px) {
 
-      /* Two skill cards per row */
       .skills-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-
-      /* One project card per row */
       .project-grid {
         grid-template-columns: 1fr;
       }
 
-
-      /* Reduce hero height */
-      .hero {
-        min-height: 520px;
-      }
-
-
-      /* Adjust main heading spacing */
-      h1 {
-        letter-spacing: -2px;
-      }
-
-
-      /* Reduce section spacing on mobile */
       section {
         padding: 65px 0;
       }
-
     }
 
 
     /* =====================================================
-       12. RESPONSIVE DESIGN: VERY SMALL SCREENS
+       11. RESPONSIVE DESIGN: VERY SMALL SCREENS
        ===================================================== */
 
     @media (max-width: 430px) {
 
-      /* One skill card per row */
       .skills-grid {
         grid-template-columns: 1fr;
       }
 
-
-      /* Smaller logo */
       .logo {
         font-size: 18px;
       }
 
-
-      /* Reduce contact box padding */
       .contact-box {
         padding: 23px;
       }
-
     }
 
   </style>
@@ -687,36 +451,29 @@
 
 
   <!-- =====================================================
-       13. WEBSITE HEADER
+       12. WEBSITE HEADER AND NAVIGATION
 
-       Contains:
-       - Website logo
-       - Desktop navigation
-       - Mobile hamburger menu
-
-       IMPORTANT:
-       Navigation href values must match section IDs.
-       Example: href="#about" connects to id="about".
+       The navigation order matches the page section order.
+       Each href must match the corresponding section ID.
        ===================================================== -->
 
   <header>
 
     <nav class="container">
 
-      <!-- Website logo: clicking it returns to Home -->
-      <a href="#home" class="logo">
+      <!-- Clicking the logo returns to Projects -->
+      <a href="#projects" class="logo">
         Sajeeb Kumar<span>.</span>
       </a>
 
 
-      <!-- Mobile hamburger menu button -->
+      <!-- Mobile hamburger menu -->
       <button class="menu-toggle"
               id="menuToggle"
               aria-label="Open navigation menu"
               aria-expanded="false"
               aria-controls="navLinks">
 
-        <!-- Three horizontal lines -->
         <span></span>
         <span></span>
         <span></span>
@@ -724,39 +481,26 @@
       </button>
 
 
-      <!-- -------------------------------------------------
-           MAIN NAVIGATION MENU
-
-           Each href must match the ID of a section below.
-
-           Example:
-           #education connects to id="education".
-           ------------------------------------------------- -->
-
+      <!-- Main navigation links -->
       <ul class="nav-links" id="navLinks">
-        
+
         <li><a href="#projects">Projects</a></li>
-        
+
         <li><a href="#research">Research</a></li>
 
         <li><a href="#experience">Experience</a></li>
-        
+
         <li><a href="#education">Education</a></li>
 
         <li><a href="#skills">Skills</a></li>
 
-
-
-
-
-
-        <li><a href="#activities">Activities</a></li>
-
         <li><a href="#achievements">Achievements</a></li>
 
         <li><a href="#certificates">Certificates</a></li>
-        
-        <li><a href="#experience">About Me</a></li>
+
+        <li><a href="#activities">Activities</a></li>
+
+        <li><a href="#about">About Me</a></li>
 
         <li><a href="#contact">Contact</a></li>
 
@@ -769,9 +513,19 @@
 
 
   <!-- =====================================================
-       14. MAIN WEBSITE CONTENT
+       13. MAIN WEBSITE CONTENT
 
-       All portfolio sections are inside <main>.
+       Page order:
+       1. Projects
+       2. Research
+       3. Experience
+       4. Education
+       5. Skills
+       6. Achievements
+       7. Certificates
+       8. Activities
+       9. About Me
+       10. Contact
        ===================================================== -->
 
   <main>
@@ -780,48 +534,49 @@
 
 
       <!-- =================================================
-           SECTION 1: HOME / HERO
-
-           This is the first section visitors see.
-
-           To edit:
-           - Introductory text: change the eyebrow paragraph.
-           - Main heading: change the h1 text.
-           - Description: change hero-description.
+           SECTION 1: PROJECTS
            ================================================= -->
 
-      <section class="hero" id="home">
+      <section id="projects">
 
-        <p class="eyebrow">
-          EEE Undergraduate · Aspiring ML Engineer
-        </p>
+        <p class="section-label">01 / Selected Work</p>
+
+        <h2>Projects & experiments.</h2>
+
+        <div class="project-grid">
+
+          <!-- Project card 1 -->
+          <article class="project-card">
+
+            <p class="project-number">PROJECT 01</p>
+
+            <h3>Machine Learning Projects</h3>
+
+            <p>
+              Practical experiments in data analysis, model development,
+              and machine learning.
+            </p>
+
+            <span class="status">Projects to be added</span>
+
+          </article>
 
 
-        <h1>
-          Hi, I'm Sajeeb.<br>
-          I build and explore <span>intelligent systems.</span>
-        </h1>
+          <!-- Project card 2 -->
+          <article class="project-card">
 
+            <p class="project-number">PROJECT 02</p>
 
-        <p class="hero-description">
-          An Electrical and Electronic Engineering student passionate
-          about Machine Learning, Deep Learning, and turning data into
-          meaningful solutions.
-        </p>
+            <h3>Deep Learning Projects</h3>
 
+            <p>
+              Exploring neural networks, model training, and deep
+              learning applications.
+            </p>
 
-        <!-- Homepage buttons -->
-        <div class="buttons">
+            <span class="status">Projects to be added</span>
 
-          <!-- Scrolls to Projects section -->
-          <a href="#projects" class="btn btn-primary">
-            Explore my work ↗
-          </a>
-
-          <!-- Scrolls to Contact section -->
-          <a href="#contact" class="btn btn-secondary">
-            Get in touch
-          </a>
+          </article>
 
         </div>
 
@@ -830,36 +585,18 @@
 
 
       <!-- =================================================
-           SECTION 2: ABOUT ME
-
-           Contains your personal introduction and career goal.
+           SECTION 2: RESEARCH
            ================================================= -->
 
-      <section id="about">
+      <section id="research">
 
-        <p class="section-label">01 / About me</p>
+        <p class="section-label">02 / Research</p>
 
-        <h2>A little about myself.</h2>
+        <h2>Research.</h2>
 
-
-        <p class="about-text">
-
-          I'm an undergraduate student in Electrical and Electronic
-          Engineering with a strong interest in Artificial Intelligence
-          and Machine Learning.
-
-          <br><br>
-
-          I'm building my foundation in machine learning, deep learning,
-          programming, and data analysis. I enjoy understanding how
-          algorithms work and applying that knowledge to practical
-          problems.
-
-          <br><br>
-
-          My long-term goal is to become a Machine Learning Engineer
-          and contribute to meaningful AI research and applications.
-
+        <p class="empty-note">
+          No published research details are currently listed.
+          Research information can be added here when available.
         </p>
 
       </section>
@@ -867,20 +604,43 @@
 
 
       <!-- =================================================
-           SECTION 3: EDUCATION
+           SECTION 3: EXPERIENCE
+           ================================================= -->
 
-           Contains your academic qualifications.
+      <section id="experience">
 
-           To add another qualification:
-           Copy one complete education-card block and edit it.
+        <p class="section-label">03 / Experience</p>
+
+        <h2>Where I've contributed.</h2>
+
+        <!-- Professional experience -->
+        <div class="experience-card">
+
+          <p class="experience-meta">Web Development</p>
+
+          <h3>Assistant Web Developer</h3>
+
+          <p>
+            Worked on a WordPress website for an organization, including
+            website customization, content integration, plugin
+            configuration, and responsive design.
+          </p>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SECTION 4: EDUCATION
            ================================================= -->
 
       <section id="education">
 
-        <p class="section-label">02 / Education</p>
+        <p class="section-label">04 / Education</p>
 
         <h2>Academic background.</h2>
-
 
         <!-- Bachelor's degree -->
         <div class="experience-card">
@@ -936,25 +696,16 @@
 
 
       <!-- =================================================
-           SECTION 4: TECHNICAL SKILLS
-
-           Each skill is displayed in a separate card.
-
-           To add a skill:
-           Copy a skill-card block and change its title
-           and description.
+           SECTION 5: TECHNICAL SKILLS
            ================================================= -->
 
       <section id="skills">
 
-        <p class="section-label">03 / Technical skills</p>
+        <p class="section-label">05 / Technical Skills</p>
 
         <h2>Tools I work with.</h2>
 
-
-        <!-- All skill cards -->
         <div class="skills-grid">
-
 
           <!-- Programming languages -->
           <div class="skill-card">
@@ -1015,7 +766,6 @@
 
           </div>
 
-
         </div>
 
       </section>
@@ -1023,177 +773,15 @@
 
 
       <!-- =================================================
-           SECTION 5: RESEARCH
-
-           Your previous WordPress Research page did not
-           contain published research details.
-
-           This section is intentionally kept simple.
-           Add actual research work when available.
-           ================================================= -->
-
-      <section id="research">
-
-        <p class="section-label">04 / Research</p>
-
-        <h2>Research.</h2>
-
-
-        <p class="empty-note">
-
-          No published research details are currently listed.
-          Research information can be added here when available.
-
-        </p>
-
-      </section>
-
-
-
-      <!-- =================================================
-           SECTION 6: PROJECTS
-
-           Add your actual machine learning and deep learning
-           projects here.
-
-           To add a project:
-           Copy one complete project-card block.
-           ================================================= -->
-
-      <section id="projects">
-
-        <p class="section-label">05 / Selected work</p>
-
-        <h2>Projects & experiments.</h2>
-
-
-        <div class="project-grid">
-
-
-          <!-- Project card 1 -->
-          <article class="project-card">
-
-            <p class="project-number">PROJECT 01</p>
-
-            <h3>Machine Learning Projects</h3>
-
-            <p>
-              Practical experiments in data analysis, model development,
-              and machine learning.
-            </p>
-
-            <span class="status">Projects to be added</span>
-
-          </article>
-
-
-          <!-- Project card 2 -->
-          <article class="project-card">
-
-            <p class="project-number">PROJECT 02</p>
-
-            <h3>Deep Learning Projects</h3>
-
-            <p>
-              Exploring neural networks, model training, and deep
-              learning applications.
-            </p>
-
-            <span class="status">Projects to be added</span>
-
-          </article>
-
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           SECTION 7: EXPERIENCE
-
-           Contains your Assistant Web Developer experience.
-
-           You can add organization name, dates and details
-           when you want to update this section.
-           ================================================= -->
-
-      <section id="experience">
-
-        <p class="section-label">06 / Experience</p>
-
-        <h2>Where I've contributed.</h2>
-
-
-        <!-- Experience card -->
-        <div class="experience-card">
-
-          <p class="experience-meta">Web Development</p>
-
-          <h3>Assistant Web Developer</h3>
-
-          <p>
-            Worked on a WordPress website for an organization, including
-            website customization, content integration, plugin
-            configuration, and responsive design.
-          </p>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           SECTION 8: ACTIVITIES AND MEMBERSHIP
-
-           Contains your extracurricular and organizational
-           involvement from your old portfolio.
-           ================================================= -->
-
-      <section id="activities">
-
-        <p class="section-label">07 / Activities & Membership</p>
-
-        <h2>Beyond academics.</h2>
-
-
-        <!-- Membership and activity list -->
-        <div class="experience-card">
-
-          <ul>
-
-            <li>Islamic University Science Club (IUSC)</li>
-
-            <li>Islamic University Research Society (IURS)</li>
-
-            <li>Green Voice Islamic University</li>
-
-            <li>Gaibandha District Students Welfare Association</li>
-
-          </ul>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           SECTION 9: ACHIEVEMENTS
-
-           Contains the achievement listed on your old site.
+           SECTION 6: ACHIEVEMENTS
            ================================================= -->
 
       <section id="achievements">
 
-        <p class="section-label">08 / Achievements</p>
+        <p class="section-label">06 / Achievements</p>
 
         <h2>Recognition.</h2>
 
-
-        <!-- Achievement card -->
         <div class="experience-card">
 
           <p class="experience-meta">25 November 2025</p>
@@ -1207,21 +795,14 @@
 
 
       <!-- =================================================
-           SECTION 10: CERTIFICATES
-
-           Contains your listed courses and certificates.
-
-           To add a certificate:
-           Copy an experience-card block and update
-           its title and issuing organization.
+           SECTION 7: CERTIFICATES
            ================================================= -->
 
       <section id="certificates">
 
-        <p class="section-label">09 / Certificates</p>
+        <p class="section-label">07 / Certificates</p>
 
         <h2>Courses & certifications.</h2>
-
 
         <!-- Certificate 1 -->
         <div class="experience-card">
@@ -1277,13 +858,78 @@
 
 
       <!-- =================================================
-           SECTION 11: CONTACT
+           SECTION 8: ACTIVITIES AND MEMBERSHIP
 
-           Contains your professional contact links.
+           Activities stays immediately before About Me.
+           ================================================= -->
 
-           IMPORTANT:
-           Replace the LinkedIn homepage URL with your actual
-           LinkedIn profile URL when you have it.
+      <section id="activities">
+
+        <p class="section-label">08 / Activities & Membership</p>
+
+        <h2>Beyond academics.</h2>
+
+        <div class="experience-card">
+
+          <ul>
+
+            <li>Islamic University Science Club (IUSC)</li>
+
+            <li>Islamic University Research Society (IURS)</li>
+
+            <li>Green Voice Islamic University</li>
+
+            <li>Gaibandha District Students Welfare Association</li>
+
+          </ul>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SECTION 9: ABOUT ME
+
+           This section is intentionally placed immediately
+           before Contact.
+           ================================================= -->
+
+      <section id="about">
+
+        <p class="section-label">09 / About Me</p>
+
+        <h2>A little about myself.</h2>
+
+        <p class="about-text">
+
+          I'm an undergraduate student in Electrical and Electronic
+          Engineering with a strong interest in Artificial Intelligence
+          and Machine Learning.
+
+          <br><br>
+
+          I'm building my foundation in machine learning, deep learning,
+          programming, and data analysis. I enjoy understanding how
+          algorithms work and applying that knowledge to practical
+          problems.
+
+          <br><br>
+
+          My long-term goal is to become a Machine Learning Engineer
+          and contribute to meaningful AI research and applications.
+
+        </p>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SECTION 10: CONTACT
+
+           Contact is the final page section.
            ================================================= -->
 
       <section id="contact">
@@ -1292,7 +938,6 @@
 
         <h2>Let's connect.</h2>
 
-
         <div class="contact-box">
 
           <p>
@@ -1300,10 +945,7 @@
             research, or discussing technology? Feel free to connect.
           </p>
 
-
-          <!-- Social profile buttons -->
           <div class="buttons">
-
 
             <!-- GitHub profile -->
             <a href="https://github.com/sajeeb-kumar"
@@ -1316,7 +958,7 @@
             </a>
 
 
-            <!-- LinkedIn profile: update this link -->
+            <!-- Replace this with your actual LinkedIn profile URL -->
             <a href="https://www.linkedin.com/"
                target="_blank"
                rel="noopener"
@@ -1325,7 +967,6 @@
               LinkedIn ↗
 
             </a>
-
 
           </div>
 
@@ -1341,9 +982,7 @@
 
 
   <!-- =====================================================
-       15. WEBSITE FOOTER
-
-       This appears at the bottom of the website.
+       14. WEBSITE FOOTER
        ===================================================== -->
 
   <footer>
@@ -1359,22 +998,18 @@
 
 
   <!-- =====================================================
-       16. JAVASCRIPT: WEBSITE INTERACTIONS
+       15. JAVASCRIPT: WEBSITE INTERACTIONS
 
-       JavaScript makes the mobile navigation work and
-       highlights the navigation item for the current section.
+       Handles:
+       1. Mobile navigation open/close
+       2. Closing the menu after selecting a section
+       3. Highlighting the active navigation link
        ===================================================== -->
 
   <script>
 
-
     /* -----------------------------------------------------
-       16.1 SELECT HTML ELEMENTS
-
-       getElementById() finds an HTML element by its ID.
-
-       menuToggle = Hamburger button
-       navLinks   = Navigation list
+       15.1 SELECT HTML ELEMENTS
        ----------------------------------------------------- */
 
     const menuToggle = document.getElementById("menuToggle");
@@ -1382,28 +1017,18 @@
     const navLinks = document.getElementById("navLinks");
 
 
-
     /* -----------------------------------------------------
-       16.2 MOBILE MENU OPEN/CLOSE FUNCTION
-
-       When someone clicks the hamburger button:
-
-       1. Add or remove the "open" class.
-       2. CSS uses this class to show or hide the menu.
-       3. Update the accessibility attributes.
+       15.2 MOBILE MENU OPEN/CLOSE
        ----------------------------------------------------- */
 
     menuToggle.addEventListener("click", () => {
 
-      // Toggle the "open" class on the navigation menu
+      // Add or remove the open class
       const isOpen = navLinks.classList.toggle("open");
 
-
-      // Update whether the menu is expanded
+      // Update accessibility attributes
       menuToggle.setAttribute("aria-expanded", isOpen);
 
-
-      // Update the button's accessible label
       menuToggle.setAttribute(
         "aria-label",
         isOpen ? "Close navigation menu" : "Open navigation menu"
@@ -1412,26 +1037,18 @@
     });
 
 
-
     /* -----------------------------------------------------
-       16.3 CLOSE MENU AFTER CLICKING A NAVIGATION LINK
-
-       When a visitor selects a section on mobile:
-
-       1. Remove the "open" class.
-       2. Hide the navigation menu.
-       3. Reset the accessibility attributes.
+       15.3 CLOSE MENU AFTER CLICKING A NAVIGATION LINK
        ----------------------------------------------------- */
 
     navLinks.querySelectorAll("a").forEach(link => {
 
       link.addEventListener("click", () => {
 
-        // Close the mobile navigation
+        // Close mobile menu
         navLinks.classList.remove("open");
 
-
-        // Reset menu state
+        // Reset button accessibility attributes
         menuToggle.setAttribute("aria-expanded", "false");
 
         menuToggle.setAttribute(
@@ -1444,46 +1061,28 @@
     });
 
 
-
     /* -----------------------------------------------------
-       16.4 HIGHLIGHT ACTIVE NAVIGATION LINK
+       15.4 HIGHLIGHT ACTIVE NAVIGATION LINK
 
-       When a visitor scrolls to a section:
-
-       1. Detect which section is currently visible.
-       2. Find the corresponding navigation link.
-       3. Add the "active" CSS class to that link.
-
-       This makes the current section easier to identify.
+       Detects the section currently visible on screen
+       and highlights its matching navigation link.
        ----------------------------------------------------- */
 
-
-    // Select every section that has an ID
     const sections = document.querySelectorAll("main section[id]");
 
-
-    // Select all navigation links
     const navItems = document.querySelectorAll(".nav-links a");
 
-
-    // IntersectionObserver detects visible sections
     const observer = new IntersectionObserver(entries => {
 
       entries.forEach(entry => {
 
-        // Only process sections currently intersecting
         if (entry.isIntersecting) {
 
-          // Check every navigation link
           navItems.forEach(link => {
 
-            // Compare link destination with visible section ID
             const isActive =
               link.getAttribute("href") === "#" + entry.target.id;
 
-
-            // Highlight matching link and remove highlight
-            // from the other links
             link.classList.toggle("active", isActive);
 
           });
@@ -1494,13 +1093,13 @@
 
     }, {
 
-      // Defines the area used to detect the current section
+      // Area used to detect the currently visible section
       rootMargin: "-20% 0px -65% 0px"
 
     });
 
 
-    // Start observing all website sections
+    // Observe every page section
     sections.forEach(section => observer.observe(section));
 
 
